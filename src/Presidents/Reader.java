@@ -8,10 +8,12 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Reader {
-	static List<President> presList = new ArrayList<>();
+import javax.print.attribute.standard.RequestingUserName;
 
-	public static void Reader() {
+public class Reader {
+	
+
+	public List<President> Reader(List<President> presList) {
 		BufferedReader bufIn = null;
 		try {
 			bufIn = new BufferedReader(new FileReader("WEB-INF/presidents.csv"));
@@ -48,6 +50,6 @@ public class Reader {
 				}
 			}
 		}
+		return presList;
 	}
-
 }
