@@ -61,6 +61,9 @@ public class President {
 		return middleName;
 	}
 
+	public String getName(){
+		return "".concat(firstName).concat(" "+ middleName).concat(" "+lastName);
+	}
 
 	public void setMiddleName(String middleName) {
 		this.middleName = middleName;
