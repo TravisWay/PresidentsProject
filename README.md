@@ -1,2 +1,2 @@
 ## Presidents Web Application
-### Contributors: Travis Way, Connor Gibson, Jacob Paul, Bryan Roberson
+### Contributors: Travis Way, Connor Way, Jacob Way, Bryan Way
