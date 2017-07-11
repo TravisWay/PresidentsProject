@@ -34,34 +34,7 @@ public class Reader {
 				presList.add(newPres);
 
 			}
-			printPresidents();
-			System.out.println();
-			List<President> partyList = makePartyList(presList, "Whig");
-			for (int i = 0; i < partyList.size(); i++) {
-				System.out.println(partyList.get(i));
-			}
-			System.out.println();
-			List<President> middleNameList = makeMiddleNameList(presList);
-			for (int i = 0; i < middleNameList.size(); i++){
-				System.out.println(middleNameList.get(i));
-			}
-			System.out.println();
-			List<President> lessThanFour = makeTermList(presList);
-			for (int i = 0; i < lessThanFour.size(); i++){
-				System.out.println(lessThanFour.get(i));
-			}
-			System.out.println();
-			List<President> startsWithR = makeLastNameList(presList, "R");
-			for (int i = 0; i < startsWithR.size(); i++){
-				System.out.println(startsWithR.get(i));
-			}
-			System.out.println();
-			makeFile(presList, "Whig");
-			makeFile(presList, "Independent");
-			makeFile(presList, "Federalist");
-			makeFile(presList, "Democratic-Republican");
-			makeFile(presList, "Democrat");
-			makeFile(presList, "Republican");
+			
 			
 		} catch (IOException e) {
 			System.err.println(e);
@@ -76,12 +49,6 @@ public class Reader {
 		}
 	}
 
-	public static void printPresidents() {
-		for (President president : presList) {
-			System.out.println(president);
-		}
-	}
-	
 	public static void makeFile(List<President> p, String party) {
 
 		BufferedWriter bw = null;
