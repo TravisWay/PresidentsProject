@@ -14,7 +14,7 @@ public class Reader {
 	public static void Reader() {
 		BufferedReader bufIn = null;
 		try {
-			bufIn = new BufferedReader(new FileReader("presidents.csv"));
+			bufIn = new BufferedReader(new FileReader("WEB-INF/presidents.csv"));
 
 			String line;
 			//Reads through the csv file and stores the elements from each line into a president object which is part of a List.

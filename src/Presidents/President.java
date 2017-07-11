@@ -3,9 +3,20 @@ package Presidents;
 public class President {
 
 	public int termNumber,startYear,endYear;
-	public String firstName,middleName,lastName,party;
+	public String firstName,middleName,lastName,party, fact;
 	
 	
+
+	public String getFact() {
+		return fact;
+	}
+
+
+	public void setFact(String fact) {
+		this.fact = fact;
+	}
+
+
 	public int getTermNumber() {
 		return termNumber;
 	}
