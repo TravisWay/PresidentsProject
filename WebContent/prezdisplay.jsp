@@ -28,11 +28,17 @@
 <div class ="col">
 
 <h1>Presidents</h1>
+<br><br><br>
 
 
-<br><br><br><br><br><br><br><br>
 <div class= "presdetails">
-
+<div class="error">
+<c:when error="${error}">
+        Error
+        <br>
+        Reset all Filters
+        </c:when>
+</div>        
 <img src="${currentPresident.img}"><br><br><br>
 ${currentPresident.name}<br>
 ${currentPresident.startYear} - ${currentPresident.endYear}<br>
