@@ -3,8 +3,16 @@ package Presidents;
 public class President {
 
 	public int termNumber,startYear,endYear;
-	public String firstName,middleName,lastName,party, fact, img;
+	public String firstName,middleName,lastName,party, fact, img, info;
 	
+	public String getInfo() {
+		return info;
+	}
+
+	public void setInfo(String info) {
+		this.info = info;
+	}
+
 	public String getImg() {
 		return img;
 	}

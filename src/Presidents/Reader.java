@@ -34,6 +34,7 @@ public class Reader {
 				String[] presArr = line.split(", ");
 				President newPres = new President();
 				
+				newPres.setInfo(line);
 				newPres.setTermNumber(Integer.parseInt(presArr[0]));
 				newPres.setFirstName(presArr[1]);
 				newPres.setMiddleName(presArr[2] + " ");
