@@ -3,7 +3,7 @@
   max-width:100%;
   width: auto;
   height: auto;
-  padding: 100px 0;
+    padding: 100px 0;
   text-align: center;
   color: white;
   background: url(http://www.top4themes.com/data/out/149/6690240-white-house-wallpapers.jpg) no-repeat bottom center scroll;
@@ -63,7 +63,7 @@ img{
   height: 300px;
 }
 .textinput{
-	background: rgba(226, 224, 217, 0.2);
+	background: rgba(226, 224, 217, 0.3);
 	outline: none;
 	border-style:none;
 	color:white;

@@ -48,10 +48,10 @@ ${currentPresident.fact}<br>
 
 <div class="iform">
 <form action="president.do" method="POST">
-<input type="submit" class="button" name="prevP" value ="prev">
-
-	<input name="termNumber" class="textinput" type="number" min="1" max="45">
 	<input type="submit" class="button" value ="submit">
+<input name="termNumber" class="textinput" type="number" min="1" max="45">
+
+<input type="submit" class="button" name="prevP" value ="prev">
 
 <input type="submit" class="button" name="nextP" value ="next">
 
