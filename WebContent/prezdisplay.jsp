@@ -28,7 +28,7 @@
 </div>
 <br><br><br><br><br><br><br><br>
 <div class= "presdetails">
-${currentPresident.img}<br>
+<img src="${currentPresident.img}"><br>
 ${currentPresident.name}<br>
 ${currentPresident.startYear} - ${currentPresident.endYear}<br>
 ${currentPresident.party}<br>
