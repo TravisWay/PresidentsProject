@@ -1,8 +1,8 @@
 package Presidents;
 
-import java.rmi.server.ServerCloneException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.function.Predicate;
 
 import javax.servlet.ServletContext;
 
@@ -11,7 +11,8 @@ public class PresidentFilterDao implements PresidentDao {
 	
 	@Override
 	public List<President> filterPresidents(ServletContext context) {
-		return allpres;
+		List<President> filteredPres = allpres;
+		return filteredPres;
 	}
 	
 	public PresidentFilterDao(ServletContext servletContext){
@@ -20,6 +21,11 @@ public class PresidentFilterDao implements PresidentDao {
 		this.allpres = reader1.reader(allpres);
 		
 		
+	}
+	
+	public List<President> filteredPres(List<President> presidents, Predicate<President> predicate) {
+		return filteredPresident;
+				
 	}
 	
 	
