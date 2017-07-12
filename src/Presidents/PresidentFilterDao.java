@@ -45,7 +45,6 @@ public class PresidentFilterDao implements PresidentDao {
 			if (bipredicate.test(president, s))
 				tempList.add(president);
 		}
-		System.out.println(tempList);
 		return tempList;
 
 	}
