@@ -1,6 +1,5 @@
 package Presidents;
 
-import java.lang.invoke.SwitchPoint;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.function.BiPredicate;
@@ -11,18 +10,20 @@ public class PresidentFilterDao implements PresidentDao {
 	List<President> allpres;
 	List<President> filteredPres;
 
-
 	@Override
 	public List<President> filterPresidents(ServletContext context, String option, String input) {
 		filteredPres = allpres;
 		switch (option) {
-		case "Party": case "party":
+		case "Party":
+		case "party":
 			filteredPres = filterList(allpres, new PresidentPartyPredicate(), input);
 			break;
-		case "Name": case "name":
+		case "Name":
+		case "name":
 			filteredPres = filterList(allpres, new PresidentNamePredicate(), input);
 			break;
-		case "Year": case "year":
+		case "Year":
+		case "year":
 			filteredPres = filterList(allpres, new PresidentYearPredicate(), input);
 			break;
 		default:
@@ -39,18 +40,13 @@ public class PresidentFilterDao implements PresidentDao {
 		this.filteredPres = allpres;
 	}
 
-	public List<President> filterList(List<President> presidents, BiPredicate<President, String> bipredicate, String s) {
+	public List<President> filterList(List<President> presidents, BiPredicate<President, String> bipredicate,
+			String s) {
 		List<President> tempList = new ArrayList<>();
 		for (President president : presidents) {
 			if (bipredicate.test(president, s))
 				tempList.add(president);
 		}
-<<<<<<< HEAD
-		
-=======
->>>>>>> 636c4c119eebc99822ef6e2a685d9e0704e87d62
 		return tempList;
-
 	}
-
 }
