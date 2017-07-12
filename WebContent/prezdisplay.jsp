@@ -30,25 +30,41 @@
 <h1>Presidents</h1>
 
 
-<br><br><br><br>
+<br><br><br><br><br><br><br><br>
 <div class= "presdetails">
-<img src="${currentPresident.img}"><br><br><br><br><br><br>
+
+<img src="${currentPresident.img}"><br><br><br>
 ${currentPresident.name}<br>
 ${currentPresident.startYear} - ${currentPresident.endYear}<br>
 ${currentPresident.party}<br>
 ${currentPresident.fact}<br>
 <br>
-Term Number
+
 <div class="iform">
 <form action="president.do" method="POST">
-<input type="submit" name="prevP" value ="prev">
+<input type="submit" class="button" name="prevP" value ="prev">
 
-	<input name="termNumber" type="number" min="1" max="45">
-	<input type="submit" value ="submit">
+	<input name="termNumber" class="textinput" type="number" min="1" max="45">
+	<input type="submit" class="button" value ="submit">
 
-<input type="submit" name="nextP" value ="next">
+<input type="submit" class="button" name="nextP" value ="next">
 
 </form>
+<br>
+<form>
+  <select id="filterdrop" class="button"  name="filterdrop">
+    <option value="" >None</option>
+    <option value="party">Party</option>
+    <option value="name" >Name</option>
+    <option value="year" >Year</option>
+    <option value="fact" >Fact</option>
+  </select>
+  <label for="inputString"></label>
+  <input type="text" class="textinput" inputString" name="inputString">
+  <input type="submit" class="button" name="inputGo" value ="Search">
+  <input type="submit" class="button" name="reset" value ="Reset">
+</form>
+
 
 </div>
 </div>
