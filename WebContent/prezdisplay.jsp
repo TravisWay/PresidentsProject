@@ -12,31 +12,19 @@
 </head>
 <h1>Presidents</h1>
 <body>
-<form action="president.do" method="POST">
-<<<<<<< HEAD
-	Term Number <input name="termNumber" type="number" min="1" max="45">
-  <input type="submit" value ="submit">
 
-</form>
-<br><br><br><br>
-<form action="president.do" method="POST">
-<input type="submit" name="prevP" value ="prev">
-</form>
 
 <form action="president.do" method="POST">
-=======
+
 	Term Number<input name="termNumber" type="number" min="1" max="45">
 	<input type="submit" value ="submit">
 <input type="submit" name="prevP" value ="prev">
->>>>>>> 5be3d38eb323defd0b65076e19f748521f302a3a
+
 <input type="submit" name="nextP" value ="next">
 	
 </form>
 
-<<<<<<< HEAD
-=======
-	
->>>>>>> 5be3d38eb323defd0b65076e19f748521f302a3a
+
 
 ${currentPresident}
 
