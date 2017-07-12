@@ -1,0 +1,37 @@
+*{
+  background-color:#fffec4;
+  text-align: center;
+
+}
+h1,h4{
+  margin-top: 0px;
+  margin-bottom: 0px;
+  font-weight: lighter;
+  font-family: sans-serif;
+
+}
+h1{
+  font-weight: 500;
+}
+table{
+
+    margin-left:auto;
+    margin-right:auto;
+
+}
+th, td {
+center;
+padding left: 0px;
+padding-right: 0px;
+}
+td{
+  font-size: 16px;
+  font-family: sans-serif;
+}
+img{
+  width: 150px;
+  height: 150px;
+}
+p{
+  font-family: sans-serif;
+}
