@@ -26,18 +26,24 @@ public class PrezServlet extends HttpServlet {
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		req.setAttribute("currentPresident", dao.filteredPres.get(prezIndex));
-
+		
+		String reset = (String) req.getParameter("reset");
 		String termNum = (String) req.getParameter("termNumber");
 		String nextButton = (String) req.getParameter("nextP");
 		String prevButton = (String) req.getParameter("prevP");
 		String filterDrop = (String) req.getParameter("filterdrop");
 		String inputString = (String) req.getParameter("inputString");
 
-		int currentPrezNum = (int) ((President) req.getAttribute("currentPresident")).getTermNumber();
-
+		
 		// test for buttons
+		
+		if ( !(reset == null || reset == "")) {
+			dao.filteredPres = dao.allpres;
+			req.setAttribute("currentPresident", dao.filteredPres.get(0));
+			prezIndex = 0;
+		}
 		// filter not empty, filter based on inputString
-		if (!(inputString == null || inputString == "")) {
+		else if (!(inputString == null || inputString == "")) {
 			dao.filteredPres = dao.filterPresidents(getServletContext(), filterDrop, inputString);
 			req.setAttribute("currentPresident", dao.filteredPres.get(0));
 			prezIndex = 0;
