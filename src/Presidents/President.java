@@ -3,9 +3,15 @@ package Presidents;
 public class President {
 
 	public int termNumber,startYear,endYear;
-	public String firstName,middleName,lastName,party, fact;
+	public String firstName,middleName,lastName,party, fact, img;
 	
+	public String getImg() {
+		return img;
+	}
 	
+	public void setImg(String img) {
+		this.img = img;
+	}
 
 	public String getFact() {
 		return fact;

@@ -43,6 +43,7 @@ public class Reader {
 				newPres.setEndYear(Integer.parseInt(term[1]));
 				newPres.setParty(presArr[5]);
 				newPres.setFact(presArr[6]);
+				newPres.setImg(presArr[7]);
 
 				presList.add(newPres);
 
