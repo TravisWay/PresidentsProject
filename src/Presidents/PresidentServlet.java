@@ -19,61 +19,37 @@ public class PresidentServlet extends HttpServlet {
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		// Start test for input conditions
-		if (req.getParameter("termNumber") == null || req.getParameter("termNumber") == "")  {
+		if (req.getParameter("termNumber") == null) {
 			// default to first president for display
 			tN = 1;
-<<<<<<< HEAD
-			req.setAttribute("currentPresident", dao.filterPresidents(getServletContext(), "name", "john").get(0));
-=======
-			req.setAttribute("currentPresident", dao.filterPresidents(getServletContext(),"name","john").get(0));
->>>>>>> 636c4c119eebc99822ef6e2a685d9e0704e87d62
+			req.setAttribute("currentPresident", dao.filterPresidents(getServletContext()).get(0));
 		} else {
 			// text to see if either button was pressed
 			if (req.getParameter("nextP") == null) {
 				if (req.getParameter("prevP") == null) {
 					// if no button was pressed
 					tN = Integer.parseInt(req.getParameter("termNumber"));
-<<<<<<< HEAD
-					req.setAttribute("currentPresident", dao.filterPresidents(getServletContext(), "name", "john").get(tN - 1));
-=======
-					req.setAttribute("currentPresident", dao.filterPresidents(getServletContext(),"name","john").get(tN - 1));
->>>>>>> 636c4c119eebc99822ef6e2a685d9e0704e87d62
+					req.setAttribute("currentPresident", dao.filterPresidents(getServletContext()).get(tN - 1));
 					// get the current president
 				} else { // previous button was pressed
 					if (tN <= 1) {
 						// if at the beginning of the list go to the end
-<<<<<<< HEAD
-						req.setAttribute("currentPresident", dao.filterPresidents(getServletContext(), "name", "john").get(44));
+						req.setAttribute("currentPresident", dao.filterPresidents(getServletContext()).get(44));
 						tN = 45;
 					} else {
 						// just go to previous president
-						req.setAttribute("currentPresident", dao.filterPresidents(getServletContext(), "name", "john").get(tN - 2));
-=======
-						req.setAttribute("currentPresident", dao.filterPresidents(getServletContext(),"name","john").get(44));
-						tN = 45;
-					} else {
-						// just go to previous president
-						req.setAttribute("currentPresident", dao.filterPresidents(getServletContext(),"name","john").get(tN - 2));
->>>>>>> 636c4c119eebc99822ef6e2a685d9e0704e87d62
+						req.setAttribute("currentPresident", dao.filterPresidents(getServletContext()).get(tN - 2));
 						tN = tN - 1;
 					}
 				}
 			} else { // next button was pressed
 				if (tN >= 45) {
 					// if at the end, wrap to beginning
-<<<<<<< HEAD
-					req.setAttribute("currentPresident", dao.filterPresidents(getServletContext(), "name", "john").get(0));
+					req.setAttribute("currentPresident", dao.filterPresidents(getServletContext()).get(0));
 					tN = 1;
 				} else {
 					// just go to the next president
-					req.setAttribute("currentPresident", dao.filterPresidents(getServletContext(), "name", "john").get(tN));
-=======
-					req.setAttribute("currentPresident", dao.filterPresidents(getServletContext(),"name","john").get(0));
-					tN = 1;
-				} else {
-					// just go to the next president
-					req.setAttribute("currentPresident", dao.filterPresidents(getServletContext(),"name","john").get(tN));
->>>>>>> 636c4c119eebc99822ef6e2a685d9e0704e87d62
+					req.setAttribute("currentPresident", dao.filterPresidents(getServletContext()).get(tN));
 					tN = tN + 1;
 				}
 			}
