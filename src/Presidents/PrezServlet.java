@@ -33,11 +33,15 @@ public class PrezServlet extends HttpServlet {
 		String prevButton = (String) req.getParameter("prevP");
 		String filterDrop = (String) req.getParameter("filterdrop");
 		String inputString = (String) req.getParameter("inputString");
-
+		
 		
 		// test for buttons
-		
-		if ( !(reset == null || reset == "")) {
+		if (dao.filteredPres.isEmpty()) {
+			req.setAttribute("error", "error");
+			req.setAttribute("currentPresident", dao.filteredPres.get(0));
+			prezIndex = 0;
+		}
+		else if ( !(reset == null || reset == "")) {
 			dao.filteredPres = dao.allpres;
 			req.setAttribute("currentPresident", dao.filteredPres.get(0));
 			prezIndex = 0;
