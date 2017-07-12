@@ -4,7 +4,7 @@ import java.util.List;
 import javax.servlet.ServletContext;
 
 public interface PresidentDao {
-	List<President> filterPresidents(ServletContext context);
+	List<President> filterPresidents(ServletContext context, String option, String input);
 	
 
 	
