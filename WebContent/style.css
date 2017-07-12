@@ -1,27 +1,43 @@
+
 *{
-  background-color:#fffec4;
-  text-align: center;
-
+	
+	align-items:center;
+	text-align:center;
+	
+	
 }
-body, html {
-    height: 100%;
-}
-
-.bg { 
+body { 
     /* The image used */
-    background-image: url("https://trtpost-wpengine.netdna-ssl.com/files/2016/07/white-house-680x400.jpg");
-
-    /* Full height */
-    height: 100%; 
+    background-image: url("http://www.top4themes.com/data/out/149/6690240-white-house-wallpapers.jpg");
+   
 
     /* Center and scale the image nicely */
-    background-position: center;
+    /*  background-position: center;*/
     background-repeat: no-repeat;
     background-size: cover;
+    background-position:top-center;
+   width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 
-
+.iform{
+  color:white;	  
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  margin-top: 25%;
+  margin-left: -10%
+	
+}
+.presdetails{
+	color:white;
+	
+	
+}
 h1,h4{
+  color:white;
   margin-top: 0px;
   margin-bottom: 0px;
   font-weight: lighter;
