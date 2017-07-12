@@ -45,7 +45,10 @@ public class PresidentFilterDao implements PresidentDao {
 			if (bipredicate.test(president, s))
 				tempList.add(president);
 		}
+<<<<<<< HEAD
 		
+=======
+>>>>>>> 636c4c119eebc99822ef6e2a685d9e0704e87d62
 		return tempList;
 
 	}
