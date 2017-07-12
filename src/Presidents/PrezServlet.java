@@ -26,29 +26,31 @@ public class PrezServlet extends HttpServlet {
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		req.setAttribute("currentPresident", dao.filteredPres.get(prezIndex));
-		
+
 		String reset = (String) req.getParameter("reset");
 		String termNum = (String) req.getParameter("termNumber");
 		String nextButton = (String) req.getParameter("nextP");
 		String prevButton = (String) req.getParameter("prevP");
 		String filterDrop = (String) req.getParameter("filterdrop");
 		String inputString = (String) req.getParameter("inputString");
-		
-		
+		System.out.println(dao.filteredPres.isEmpty());
+		System.out.println(dao.filteredPres.size());
+
 		// test for buttons
-		if (dao.filteredPres.isEmpty()) {
-			req.setAttribute("error", "error");
-			req.setAttribute("currentPresident", dao.filteredPres.get(0));
-			prezIndex = 0;
-		}
-		else if ( !(reset == null || reset == "")) {
-			dao.filteredPres = dao.allpres;
-			req.setAttribute("currentPresident", dao.filteredPres.get(0));
-			prezIndex = 0;
-		}
-		// filter not empty, filter based on inputString
-		else if (!(inputString == null || inputString == "")) {
+		if (!(inputString == null || inputString == "")) {
 			dao.filteredPres = dao.filterPresidents(getServletContext(), filterDrop, inputString);
+			prezIndex = 0;
+			if (dao.filteredPres.isEmpty()) {
+				req.setAttribute("error", "error");
+				dao.filteredPres = dao.allpres;
+				req.setAttribute("currentPresident", dao.filteredPres.get(0));
+				prezIndex = 0;
+			}else{
+				req.setAttribute("currentPresident", dao.filteredPres.get(0));
+				
+			}
+		} else if (!(reset == null || reset == "")) {
+			dao.filteredPres = dao.allpres;
 			req.setAttribute("currentPresident", dao.filteredPres.get(0));
 			prezIndex = 0;
 
@@ -75,6 +77,7 @@ public class PrezServlet extends HttpServlet {
 				prezIndex = dao.filteredPres.size() - 1;
 			}
 			req.setAttribute("currentPresident", dao.filteredPres.get(prezIndex));
+			// filter not empty, filter based on inputString
 		}
 
 		this.getServletContext().getRequestDispatcher("/prezdisplay.jsp").forward(req, resp);

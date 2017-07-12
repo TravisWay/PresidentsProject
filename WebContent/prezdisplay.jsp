@@ -33,11 +33,11 @@
 
 <div class= "presdetails">
 <div class="error">
-<c:when error="${error}">
+<c:if test="${error=='error'}">
         Error
         <br>
         Reset all Filters
-        </c:when>
+        </c:if>
 </div>        
 <img src="${currentPresident.img}"><br><br><br>
 ${currentPresident.name}<br>
