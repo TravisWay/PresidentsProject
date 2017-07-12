@@ -9,10 +9,12 @@ import javax.servlet.ServletContext;
 
 public class PresidentFilterDao implements PresidentDao {
 	List<President> allpres;
+	List<President> filteredPres;
+
 
 	@Override
 	public List<President> filterPresidents(ServletContext context, String option, String input) {
-		List<President> filteredPres = allpres;
+		filteredPres = allpres;
 		switch (option) {
 		case "Party": case "party":
 			filteredPres = filterList(allpres, new PresidentPartyPredicate(), input);
@@ -26,9 +28,7 @@ public class PresidentFilterDao implements PresidentDao {
 		default:
 			filteredPres = filterList(allpres, new PresidentInfoPredicate(), input);
 			break;
-			
 		}
-			
 		return filteredPres;
 	}
 
@@ -36,7 +36,7 @@ public class PresidentFilterDao implements PresidentDao {
 		Reader reader1 = new Reader(servletContext);
 		allpres = new ArrayList<>();
 		this.allpres = reader1.reader(allpres);
-
+		this.filteredPres = allpres;
 	}
 
 	public List<President> filterList(List<President> presidents, BiPredicate<President, String> bipredicate, String s) {

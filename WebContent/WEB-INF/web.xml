@@ -4,11 +4,11 @@
     <welcome-file>president.do</welcome-file>
   </welcome-file-list>
   <servlet>
-    <servlet-name>PresidentServlet</servlet-name>
-    <servlet-class>Presidents.PresidentServlet</servlet-class>
+    <servlet-name>PrezServlet</servlet-name>
+    <servlet-class>Presidents.PrezServlet</servlet-class>
   </servlet>
   <servlet-mapping>
-    <servlet-name>PresidentServlet</servlet-name>
+    <servlet-name>PrezServlet</servlet-name>
     <url-pattern>*.do</url-pattern>
   </servlet-mapping>
 </web-app>
