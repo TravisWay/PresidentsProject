@@ -15,16 +15,11 @@
 <form action="president.do" method="POST">
 	Term Number<input name="termNumber" type="number" min="1" max="45">
 	<input type="submit" value ="submit">
+<input type="submit" name="prevP" value ="prev">
+<input type="submit" name="nextP" value ="next">
 	
 </form>
 
-<form action="president.do" method="POST">
-<input type="submit" name="prevP" value ="prev">
-</form>	
-
-<form action="president.do" method="POST">
-<input type="submit" name="nextP" value ="next">
-</form>
 	
 
 ${currentPresident}
